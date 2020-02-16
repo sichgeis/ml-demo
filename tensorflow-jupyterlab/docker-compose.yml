@@ -1,0 +1,15 @@
+version:  '3'
+services:
+  tensorflow-notebook:
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: tensorflow-notebook
+    volumes:
+      - ./work:/home/jovyan/work
+    ports:
+      - 8888:8888
+      - 6006:6006
+    command: bash -c "start-notebook.sh --NotebookApp.password=sha1:3881d88961d7:8993b582e2f5a77babe4a108031298a12a6c714a & tensorboard --logdir=/home/jovyan/logs/ --bind_all"
