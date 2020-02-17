@@ -5,7 +5,7 @@
     "gunicorn": "gunicorn $GUNICORN_PARAMS server:app",
     "dev": "cd ./client && ng serve && cd .. && gunicorn server:app",
     "ng": "cd ./client && ng && cd ..",
-    "start": "cd ./client && ng build && cd .. && gunicorn $GUNICORN_PARAMS server:app",
+    "start": "gunicorn $GUNICORN_PARAMS server:app",
     "build": "cd ./client && ng build && cd ..",
     "test": "cd ./client && ng test && cd ..",
     "lint": "cd ./client && ng lint && cd ..",
