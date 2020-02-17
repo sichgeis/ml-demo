@@ -8,7 +8,7 @@ services:
       dockerfile: ./Dockerfile
     image: tensorflow-notebook
     volumes:
-      - ./work:/home/jovyan/work
+      - ./work:/home/jovyan/work:delegated
     ports:
       - 8888:8888
       - 6006:6006
