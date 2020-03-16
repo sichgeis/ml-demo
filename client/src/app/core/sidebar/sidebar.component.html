@@ -1,0 +1,17 @@
+<div class="sidebar" [ngClass]="expanded ? 'expanded' : 'collapsed'">
+  <ul>
+    <li
+      class="collapsebutton"
+      (click)="toggle()"
+    >
+      <a class="float-right toggle-icon">
+        <em
+          [ngClass]="
+            expanded ? 'iwp-icon-gen_arrow_left' : 'iwp-icon-gen_arrow_right'
+          "
+        ></em>
+      </a>
+    </li>
+    <ng-content></ng-content>
+  </ul>
+</div>
